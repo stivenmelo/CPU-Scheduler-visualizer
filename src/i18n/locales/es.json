@@ -1,0 +1,146 @@
+{
+  "app": {
+    "title": "Visualizador de Planificación CPU",
+    "subtitle": "Comprende los algoritmos de planificación de procesos visualmente"
+  },
+  "nav": {
+    "home": "Inicio",
+    "simulator": "Simulador"
+  },
+  "algorithms": {
+    "FCFS": {
+      "name": "Primero en llegar, primero en ser servido",
+      "short": "FCFS",
+      "description": "Los procesos se ejecutan en el orden en que llegan. Simple y justo por orden de llegada.",
+      "type": "No Apropiativo",
+      "complexity": "O(n)",
+      "pros": ["Simple de implementar", "Sin inanición", "Justo en orden de llegada"],
+      "cons": ["Alto tiempo de espera promedio", "Efecto convoy", "No apto para sistemas interactivos"]
+    },
+    "SJF": {
+      "name": "Trabajo más corto primero",
+      "short": "SJF",
+      "description": "Cuando el CPU queda libre, selecciona el proceso con el menor tiempo de ráfaga.",
+      "type": "No Apropiativo",
+      "complexity": "O(n log n)",
+      "pros": ["Minimiza el tiempo de espera promedio", "Buen rendimiento"],
+      "cons": ["Inanición de procesos largos", "El tiempo de ráfaga debe conocerse de antemano"]
+    },
+    "SRTF": {
+      "name": "Menor tiempo restante primero",
+      "short": "SRTF",
+      "description": "Versión apropiativa de SJF. Si llega un proceso con menor tiempo restante, desaloja al actual.",
+      "type": "Apropiativo",
+      "complexity": "O(n log n)",
+      "pros": ["Tiempo de espera promedio óptimo", "Respuesta rápida a trabajos cortos"],
+      "cons": ["Alto overhead por cambios de contexto", "Posible inanición", "Requiere predicción del tiempo de ráfaga"]
+    },
+    "RR": {
+      "name": "Turno rotativo",
+      "short": "Round Robin",
+      "description": "Cada proceso recibe un quantum de tiempo fijo. Al expirar, el proceso vuelve al final de la cola.",
+      "type": "Apropiativo",
+      "complexity": "O(n)",
+      "pros": ["Distribución justa del CPU", "Ideal para sistemas de tiempo compartido", "Sin inanición"],
+      "cons": ["El rendimiento depende del tamaño del quantum", "Alto overhead si el quantum es muy pequeño"]
+    },
+    "PRIORITY_NP": {
+      "name": "Prioridad (No Apropiativo)",
+      "short": "Prioridad NP",
+      "description": "Los procesos se planifican por prioridad. Una vez que un proceso inicia, se ejecuta hasta completarse.",
+      "type": "No Apropiativo",
+      "complexity": "O(n²)",
+      "pros": ["Las tareas importantes se ejecutan primero", "Lógica simple"],
+      "cons": ["Inanición de procesos de baja prioridad", "Se necesita envejecimiento para evitar la inanición"]
+    },
+    "PRIORITY_P": {
+      "name": "Prioridad (Apropiativo)",
+      "short": "Prioridad P",
+      "description": "Si llega un proceso de mayor prioridad, desaloja inmediatamente al proceso en ejecución.",
+      "type": "Apropiativo",
+      "complexity": "O(n log n)",
+      "pros": ["Alta respuesta a tareas prioritarias", "Usado en sistemas de tiempo real"],
+      "cons": ["Riesgo de inanición", "Muchos cambios de contexto", "Implementación compleja"]
+    }
+  },
+  "controls": {
+    "play": "Reproducir",
+    "pause": "Pausar",
+    "reset": "Reiniciar",
+    "speed": "Velocidad",
+    "step": "Paso {{current}} de {{total}}"
+  },
+  "cpu": {
+    "title": "CPU",
+    "idle": "EN ESPERA",
+    "executing": "Ejecutando",
+    "progress": "Progreso del quantum"
+  },
+  "queue": {
+    "title": "Cola de Listos",
+    "empty": "La cola está vacía"
+  },
+  "gantt": {
+    "title": "Diagrama de Gantt",
+    "idle": "Inactivo",
+    "time": "Tiempo"
+  },
+  "processTable": {
+    "title": "Procesos",
+    "id": "ID",
+    "arrival": "Llegada",
+    "burst": "Ráfaga",
+    "priority": "Prioridad",
+    "remaining": "Restante",
+    "status": "Estado",
+    "status_waiting": "Esperando",
+    "status_running": "Ejecutando",
+    "status_done": "Completado"
+  },
+  "metrics": {
+    "title": "Resultados de Simulación",
+    "avgWaiting": "Espera Promedio",
+    "avgTurnaround": "Retorno Promedio",
+    "avgResponse": "Respuesta Promedio",
+    "cpuUtilization": "Utilización CPU",
+    "throughput": "Rendimiento",
+    "perProcess": "Desglose por Proceso",
+    "completion": "Finalización",
+    "turnaround": "Retorno",
+    "waiting": "Espera",
+    "response": "Respuesta",
+    "units": "unidades",
+    "processes_per_unit": "proc/unidad"
+  },
+  "theory": {
+    "open": "Teoría",
+    "close": "Cerrar",
+    "complexity": "Complejidad",
+    "scheduling_type": "Tipo",
+    "pros": "Ventajas",
+    "cons": "Desventajas",
+    "noSelection": "Selecciona un algoritmo para ver su teoría"
+  },
+  "quantum": {
+    "label": "Quantum de tiempo",
+    "hint": "Unidades de tiempo por turno"
+  },
+  "scenario": {
+    "label": "Escenario demo",
+    "classic": "Clásico",
+    "convoy": "Efecto Convoy",
+    "rr_showcase": "Round Robin",
+    "priority_starvation": "Inanición"
+  },
+  "theme": {
+    "dark": "Oscuro",
+    "light": "Claro"
+  },
+  "home": {
+    "hero_title": "Planificador CPU",
+    "hero_subtitle": "Visualiza y comprende cómo funcionan los algoritmos de planificación de procesos del sistema operativo",
+    "cta": "Abrir Simulador",
+    "select_algo": "Elige un algoritmo de planificación",
+    "select_scenario": "Escenario demo"
+  }
+}

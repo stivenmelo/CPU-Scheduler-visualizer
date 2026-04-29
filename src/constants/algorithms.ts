@@ -1,0 +1,58 @@
+import type { AlgorithmConfig } from '@/types';
+
+export const ALGORITHM_CONFIGS: AlgorithmConfig[] = [
+  {
+    id: 'FCFS',
+    nameKey: 'algorithms.FCFS.name',
+    shortKey: 'algorithms.FCFS.short',
+    descriptionKey: 'algorithms.FCFS.description',
+    isPreemptive: false,
+    requiresQuantum: false,
+    requiresPriority: false,
+  },
+  {
+    id: 'SJF',
+    nameKey: 'algorithms.SJF.name',
+    shortKey: 'algorithms.SJF.short',
+    descriptionKey: 'algorithms.SJF.description',
+    isPreemptive: false,
+    requiresQuantum: false,
+    requiresPriority: false,
+  },
+  {
+    id: 'SRTF',
+    nameKey: 'algorithms.SRTF.name',
+    shortKey: 'algorithms.SRTF.short',
+    descriptionKey: 'algorithms.SRTF.description',
+    isPreemptive: true,
+    requiresQuantum: false,
+    requiresPriority: false,
+  },
+  {
+    id: 'RR',
+    nameKey: 'algorithms.RR.name',
+    shortKey: 'algorithms.RR.short',
+    descriptionKey: 'algorithms.RR.description',
+    isPreemptive: true,
+    requiresQuantum: true,
+    requiresPriority: false,
+  },
+  {
+    id: 'PRIORITY_NP',
+    nameKey: 'algorithms.PRIORITY_NP.name',
+    shortKey: 'algorithms.PRIORITY_NP.short',
+    descriptionKey: 'algorithms.PRIORITY_NP.description',
+    isPreemptive: false,
+    requiresQuantum: false,
+    requiresPriority: true,
+  },
+  {
+    id: 'PRIORITY_P',
+    nameKey: 'algorithms.PRIORITY_P.name',
+    shortKey: 'algorithms.PRIORITY_P.short',
+    descriptionKey: 'algorithms.PRIORITY_P.description',
+    isPreemptive: true,
+    requiresQuantum: false,
+    requiresPriority: true,
+  },
+];

@@ -1,0 +1,146 @@
+{
+  "app": {
+    "title": "CPU Scheduler Visualizer",
+    "subtitle": "Understand process scheduling algorithms visually"
+  },
+  "nav": {
+    "home": "Home",
+    "simulator": "Simulator"
+  },
+  "algorithms": {
+    "FCFS": {
+      "name": "First Come First Served",
+      "short": "FCFS",
+      "description": "Processes are executed in the order they arrive. Simple and fair by arrival order.",
+      "type": "Non-Preemptive",
+      "complexity": "O(n)",
+      "pros": ["Simple to implement", "No starvation", "Fair in arrival order"],
+      "cons": ["High average waiting time", "Convoy effect", "Not suitable for interactive systems"]
+    },
+    "SJF": {
+      "name": "Shortest Job First",
+      "short": "SJF",
+      "description": "When the CPU is free, it selects the process with the shortest burst time.",
+      "type": "Non-Preemptive",
+      "complexity": "O(n log n)",
+      "pros": ["Minimizes average waiting time", "Good throughput"],
+      "cons": ["Starvation of long processes", "Burst time must be known in advance"]
+    },
+    "SRTF": {
+      "name": "Shortest Remaining Time First",
+      "short": "SRTF",
+      "description": "Preemptive version of SJF. If a new process arrives with shorter remaining time, it preempts the current one.",
+      "type": "Preemptive",
+      "complexity": "O(n log n)",
+      "pros": ["Optimal average waiting time", "Responsive to short jobs"],
+      "cons": ["High context switch overhead", "Starvation possible", "Burst time must be predicted"]
+    },
+    "RR": {
+      "name": "Round Robin",
+      "short": "Round Robin",
+      "description": "Each process gets a fixed time quantum. After the quantum expires, the process goes to the back of the queue.",
+      "type": "Preemptive",
+      "complexity": "O(n)",
+      "pros": ["Fair allocation", "Good for time-sharing systems", "No starvation"],
+      "cons": ["Performance depends on quantum size", "High context switch overhead if quantum is too small"]
+    },
+    "PRIORITY_NP": {
+      "name": "Priority (Non-Preemptive)",
+      "short": "Priority NP",
+      "description": "Processes are scheduled by priority. Once a process starts, it runs to completion.",
+      "type": "Non-Preemptive",
+      "complexity": "O(n²)",
+      "pros": ["Important tasks run first", "Simple logic"],
+      "cons": ["Starvation of low-priority processes", "Aging needed to prevent starvation"]
+    },
+    "PRIORITY_P": {
+      "name": "Priority (Preemptive)",
+      "short": "Priority P",
+      "description": "If a higher-priority process arrives, it immediately preempts the currently running process.",
+      "type": "Preemptive",
+      "complexity": "O(n log n)",
+      "pros": ["Highly responsive to priority tasks", "Used in real-time systems"],
+      "cons": ["Starvation risk", "Many context switches", "Complex implementation"]
+    }
+  },
+  "controls": {
+    "play": "Play",
+    "pause": "Pause",
+    "reset": "Reset",
+    "speed": "Speed",
+    "step": "Step {{current}} of {{total}}"
+  },
+  "cpu": {
+    "title": "CPU",
+    "idle": "IDLE",
+    "executing": "Executing",
+    "progress": "Time slice progress"
+  },
+  "queue": {
+    "title": "Ready Queue",
+    "empty": "Queue is empty"
+  },
+  "gantt": {
+    "title": "Gantt Chart",
+    "idle": "Idle",
+    "time": "Time"
+  },
+  "processTable": {
+    "title": "Processes",
+    "id": "ID",
+    "arrival": "Arrival",
+    "burst": "Burst",
+    "priority": "Priority",
+    "remaining": "Remaining",
+    "status": "Status",
+    "status_waiting": "Waiting",
+    "status_running": "Running",
+    "status_done": "Done"
+  },
+  "metrics": {
+    "title": "Simulation Results",
+    "avgWaiting": "Avg Waiting Time",
+    "avgTurnaround": "Avg Turnaround Time",
+    "avgResponse": "Avg Response Time",
+    "cpuUtilization": "CPU Utilization",
+    "throughput": "Throughput",
+    "perProcess": "Per-Process Breakdown",
+    "completion": "Completion",
+    "turnaround": "Turnaround",
+    "waiting": "Waiting",
+    "response": "Response",
+    "units": "units",
+    "processes_per_unit": "proc/unit"
+  },
+  "theory": {
+    "open": "Theory",
+    "close": "Close",
+    "complexity": "Time Complexity",
+    "scheduling_type": "Type",
+    "pros": "Advantages",
+    "cons": "Disadvantages",
+    "noSelection": "Select an algorithm to view its theory"
+  },
+  "quantum": {
+    "label": "Time Quantum",
+    "hint": "Time units per slice"
+  },
+  "scenario": {
+    "label": "Demo Scenario",
+    "classic": "Classic",
+    "convoy": "Convoy Effect",
+    "rr_showcase": "Round Robin",
+    "priority_starvation": "Starvation"
+  },
+  "theme": {
+    "dark": "Dark",
+    "light": "Light"
+  },
+  "home": {
+    "hero_title": "CPU Scheduler",
+    "hero_subtitle": "Visualize and understand how operating system process scheduling algorithms work",
+    "cta": "Launch Simulator",
+    "select_algo": "Choose a scheduling algorithm",
+    "select_scenario": "Demo scenario"
+  }
+}
